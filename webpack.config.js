@@ -126,7 +126,7 @@ let prodConfig = {
   // add some plugins for production build
   plugins: commonConfig.plugins.concat([
 
-    // For to remove the build directory before each production build
+    // Force to remove the build directory before each production build
     new CleanWebpackPlugin([BUILD_DIR])
   ])
 };
