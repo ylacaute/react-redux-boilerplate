@@ -1,6 +1,6 @@
 # React + Redux + Webpack 3 Boilerplate
 
-Because it can be a headache to configure Webpack, I decided to create this boilerplate repository, which is not finished yet.
+Because it can be a complicated to configure Webpack I decided to create this boilerplate repository, which is not finished yet.
 
 ## Features
 - [x] Webpack v3
@@ -12,13 +12,10 @@ Because it can be a headache to configure Webpack, I decided to create this boil
 - [X] Karma (running but with dumb tests, still not finished)
 
 ## Conventions
-I am mainly a back-end developer and my advice is that front-end tools and organization is still a nightmare in 2017. That's why this boilerplate will try to follow Maven/Java-style conventions with a minimum set of configuration files. For example :
- * have a clear **separation of source types** (JS vs SCSS, src vs tests)
- ** SCSS organization is not necessary the same as JS
- ** CSS is for STYLE, not JS. CSS classes should describe object natures only, forget classes like 'middle' or 'align-left'. In SASS, the **key word @Extend** will be your best friend.  
- * use **camelCase** everywhere
- * organize **main directories by function first** and then organize them by nature
- ** this should allow us to extract any module in a separate project when growing to much
+I am mainly a back-end developer and in my opinion front-end tools and organization are still a nightmare in 2017. That's why this boilerplate will try to follow Maven/Java-style conventions with a minimum set of configuration files. For example :
+ - have a clear __separation of source types__ (JS Vs SCSS, src Vs tests...)
+   - CSS is for STYLE, not JS. CSS classes should describe object natures only, forget classes like 'middle' or 'align-left'. In SASS, the __key word @Extend__ should be our best friend. This bring us to often construct a different directory structure.   
+ - use __camelCase__ everywhere
 
 ## Development
 Run the local webpack-dev-server with auto-compile and live-reloading on [http://localhost:8080/](http://localhost:8080/)
