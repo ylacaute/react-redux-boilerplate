@@ -9,7 +9,7 @@ Because it can be a complicated to configure Webpack I decided to create this bo
 - [X] EJS template
 - [X] Redux
 - [ ] Json-server
-- [X] Karma (running but with dumb tests, still not finished)
+- [X] Karma + Istanbul (running but with dumb tests, still not finished)
 
 ## Conventions
 I am mainly a back-end developer and in my opinion front-end tools and organization are still a nightmare in 2017. That's why this boilerplate will try to follow Maven/Java-style conventions with a minimum set of configuration files. For example :
