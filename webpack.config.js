@@ -23,7 +23,6 @@ let commonConfig = {
   // Source entries to compile
   entry: {
     app: [
-      'react-hot-loader/patch',
       './js/main.jsx'
     ],
     vendor: ["react", "react-dom"]
@@ -85,7 +84,11 @@ let commonConfig = {
           loader: 'babel-loader',
           options: {
             presets: ["es2015", "react"],
-            plugins: ["react-hot-loader/babel"]
+            plugins: [
+              "react-hot-loader/babel",      // react hot reload
+              "transform-class-properties",  // static
+              "transform-object-rest-spread" // use of '...' for properties
+            ]
           },
         }]
       },
