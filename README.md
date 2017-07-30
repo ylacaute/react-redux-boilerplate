@@ -9,7 +9,7 @@ Because it can be a complicated to configure Webpack I decided to create this bo
 - [X] EJS template
 - [X] Redux
 - [X] Json-server
-- [ ] Configure webpack to act as proxy for Json-server
+- [X] Configure webpack to act as proxy (with Json-server)
 - [X] Karma + Istanbul (running but with dumb tests, still not finished)
 
 ## Conventions

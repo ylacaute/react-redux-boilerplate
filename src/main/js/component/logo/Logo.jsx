@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const LogoActionTypes = {
+export const ActionType = {
   LogoClicked: 'LOGO_CLICKED'
 };
 
-export const LogoActionCreators = {
+export const LogoActionCreator = {
   onLogoClicked : (clickCount) => {
     return {
-      type: LogoActionTypes.LogoClicked,
+      type: ActionType.LogoClicked,
       clickCount: clickCount
     }
   }

@@ -113,7 +113,17 @@ let devConfig = {
     publicPath: '/',
     filename: '[name].js',
     path: BUILD_DIR
+  },
+
+  devServer: {
+    host: '0.0.0.0',
+    proxy: {
+      "/api": {
+        target: "http://localhost:3000"
+      }
+    }
   }
+
 };
 
 let prodConfig = {

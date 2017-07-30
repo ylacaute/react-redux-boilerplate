@@ -1,9 +1,9 @@
 
-import { LogoActionTypes }  from 'component/logo/Logo.jsx';
+import { ActionType }  from 'component/logo/Logo.jsx';
 
 const clockMiddleware = clockService => store => next => action => {
 
-  if (action.type === LogoActionTypes.LogoClicked) {
+  if (action.type === ActionType.LogoClicked) {
     clockService.onLogoClicked(action.clickCount);
   }
 

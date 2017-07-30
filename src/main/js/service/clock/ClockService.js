@@ -21,7 +21,6 @@ const DEFAULT_PROPS = {
 export class ClockService {
 
   constructor(props = DEFAULT_PROPS) {
-    console.log('Creating ClockService...');
     this.props = Object.assign({}, DEFAULT_PROPS, props);
   };
 
@@ -30,7 +29,7 @@ export class ClockService {
   }
 
   onLogoClicked(clickCount) {
-    if (clickCount === 20) {
+    if (clickCount === 10) {
       this.stop();
     }
   };

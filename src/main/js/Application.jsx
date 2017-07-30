@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { bindActionCreators  } from 'redux'
 import { connect } from 'react-redux'
-import { Logo, LogoActionCreators }  from 'component/logo/Logo.jsx';
+import { Logo, LogoActionCreator }  from 'component/logo/Logo.jsx';
 import UUID from 'utils/UUID';
 import Style from 'index.scss';
 
@@ -14,6 +14,7 @@ class Application extends React.Component {
   static propTypes = {
     tickCount: PropTypes.number.isRequired,
     logoClickCount: PropTypes.number.isRequired,
+    jenkinsMonitoring: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired
   };
 
@@ -28,7 +29,9 @@ class Application extends React.Component {
         <div><strong>Build env: </strong>{env}</div>
         <div><strong>Build hash: </strong>{hash}</div>
         <div><strong>Tick count: </strong>{this.props.tickCount}</div>
-        <div><strong>Logo click count: </strong>{this.props.logoClickCount} (stop timer at 20 clicks)</div>
+        <div><strong>Logo click count: </strong>{this.props.logoClickCount} (stop timer at 10 clicks)</div>
+        <div><strong>JenkinsMonitoring HTTP response: </strong></div>
+        <div>{JSON.stringify(this.props.jenkinsMonitoring)}</div>
         <Logo onLogoClicked={this.props.actions.onLogoClicked}/>
       </div>
     );
@@ -39,12 +42,13 @@ class Application extends React.Component {
 const mapStateToProps = state => {
   return {
     logoClickCount: state.logoClickCount,
-    tickCount: state.tickCount
+    tickCount: state.tickCount,
+    jenkinsMonitoring: state.jenkinsMonitoring
   }
 };
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(LogoActionCreators, dispatch)
+  actions: bindActionCreators(LogoActionCreator, dispatch)
 });
 
 export default connect(
