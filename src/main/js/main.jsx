@@ -8,7 +8,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 
 // MAIN APP
-import App from './Application.jsx'
+import Application from './Application.jsx'
 
 // REDUCERS
 import logoClickCount from 'redux/reducer/Logo';
@@ -42,7 +42,7 @@ clockService.start();
 
 render(
   <Provider store={store}>
-    <App tickCount={0}/>
+    <Application />
   </Provider>,
   document.getElementById('react-app')
 );
