@@ -8,7 +8,8 @@ Because it can be a complicated to configure Webpack I decided to create this bo
 - [x] Live reload
 - [X] EJS template
 - [X] Redux
-- [ ] Json-server
+- [X] Json-server
+- [ ] Configure webpack to act as proxy for Json-server
 - [X] Karma + Istanbul (running but with dumb tests, still not finished)
 
 ## Conventions
@@ -16,6 +17,15 @@ I am mainly a back-end developer and in my opinion front-end tools and organizat
  - have a clear __separation of source types__ (JS Vs SCSS, src Vs tests...)
    - CSS is for STYLE, not JS. CSS classes should describe object natures only, forget classes like 'middle' or 'align-left'. In SASS, the __key word @Extend__ should be our best friend. This bring us to often construct a different directory structure.   
  - use __camelCase__ everywhere
+
+## Json-server
+Start the server API (to mock back-end)
+```sh
+$ npm run api
+```
+Check mocked urls :
+ - [http://localhost:3000/api/consumer/jira?query=query1](http://localhost:3000/api/consumer/jira?query=query1)
+ - [http://localhost:3000/api/jenkins/monitoring](http://localhost:3000/api/jenkins/monitoring)
 
 ## Development
 Run the local webpack-dev-server with auto-compile and live-reloading on [http://localhost:8080/](http://localhost:8080/)

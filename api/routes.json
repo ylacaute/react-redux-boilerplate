@@ -1,0 +1,4 @@
+{
+  "/api/consumer/jira" : "/jira",
+  "/api/jenkins/monitoring": "/jenkinsMonitoring"
+}

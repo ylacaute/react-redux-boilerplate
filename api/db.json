@@ -1,0 +1,22 @@
+{
+  "jira": [
+    {
+      "query": "query1",
+      "total": 1
+    },
+    {
+      "query": "query2",
+      "total": 2
+    }
+  ],
+
+  "jenkinsMonitoring": {
+    "lastUpdate": "09/06 23:06",
+    "version": "v2.46.3",
+    "memoryUsage": 11,
+    "cpuUsage": 32,
+    "fileDescriptorUsage": 8,
+    "activeThreadCount": 0,
+    "freeDiskSpaceInTemp": 800
+  }
+}
