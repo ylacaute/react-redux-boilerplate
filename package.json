@@ -17,7 +17,6 @@
     "prod": "NODE_ENV=prod webpack -p --progress",
     "serve": "node_modules/.bin/http-server dist"
   },
-
   "keywords": [
     "webpack",
     "webpack 3",

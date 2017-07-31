@@ -17,7 +17,8 @@ I am mainly a back-end developer and in my opinion front-end tools and organizat
  - have a clear __separation of source types__ (JS Vs SCSS, src Vs tests...)
    - CSS is for STYLE, not JS. CSS classes should describe object natures only, forget classes like 'middle' or 'align-left'. In SASS, the __key word @Extend__ should be our best friend. This bring us to often construct a different directory structure.   
  - use __camelCase__ everywhere
-
+ - use __singular__ everywhere, plural brings confusion
+ 
 ## Json-server
 Start the server API (to mock back-end)
 ```sh
