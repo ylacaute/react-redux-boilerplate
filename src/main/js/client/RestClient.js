@@ -1,54 +1,47 @@
 
-let headers = new Headers();
+let defaultHeaders = new Headers();
+defaultHeaders.append('Accept', 'application/json');
+defaultHeaders.append('Content-Type', 'application/json');
 
-headers.append('Accept', 'application/json');
-headers.append('Content-Type', 'application/json');
 
+let jsonFetch = (path, options, callback, errorCallback) => {
+  console.log("[REQUEST]", options.verb, path);
+  let url = window.location.origin + path;
+  fetch(url, {
+    headers: defaultHeaders,
+    ...options
+  })
+  .then(response => {
+    console.log("[RESPONSE", response.status + "]", options.verb, path);
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    return response;
+  })
+  .then(response => response.json())
+  .then(callback)
+  .catch(error => {
+    if (errorCallback !== null) {
+      errorCallback(error);
+    }
+  });
+};
 
-function handleErrors(response) {
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  }
-  return response;
-}
-
-class RestClient {
+export default class RestClient {
 
   static get = (path, callback, errorCallback) => {
-    let url = window.location.origin + path;
-    console.log("[REQUEST] GET ", path);
-    fetch(url, {
-      method: 'GET',
-      headers: headers,
-    }).then(handleErrors)
-      .then(response => response.json())
-      .then(json => {
-        console.log("[RESPONSE] GET ", path);
-        callback(json)
-      })
-      .catch(error => {
-        if (errorCallback != null) {
-          errorCallback(error);
-        }
-      });
+    let options = {
+      verb: 'GET',
+    };
+    jsonFetch(path, options, callback, errorCallback);
   };
 
   static post = (path, payload, callback, errorCallback) => {
-    let url = window.location.origin + path;
-    fetch(url, {
-      method: 'POST',
-      headers: headers,
+    let options = {
+      verb: 'GET',
       body: JSON.stringify(payload)
-    }).then(handleErrors)
-      .then(response => response.json())
-      .then(json => callback(json))
-      .catch(error => {
-        if (errorCallback != null) {
-          errorCallback(error);
-        }
-      });
+    };
+    jsonFetch(path, options, callback, errorCallback);
   };
 
 }
-
-export default RestClient;
