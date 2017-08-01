@@ -122,6 +122,14 @@ let devConfig = {
         target: "http://localhost:3000"
       }
     }
+  },
+
+  // Change watchOptions to be sure to detect source change and enable hot reloading.
+  // On Linux, without this configuration sometimes changes are not detected
+  watchOptions: {
+    aggregateTimeout: 300,
+    poll: 1000,
+    ignored: /node_modules/
   }
 
 };

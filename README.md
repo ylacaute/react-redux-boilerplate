@@ -56,3 +56,5 @@ For Linux users, if hot reload does not work, try to increase the file watcher l
 $ echo 100000 | sudo tee /proc/sys/fs/inotify/max_user_watches
 ```
 I lost few hours to understand that was the problem and not my webpack configuration file !
+
+Also, please be careful about the 'watchOptions' section in webpack configuration. On Linux (maybe on other OS too), sometimes changes are not detected without this configuration.
