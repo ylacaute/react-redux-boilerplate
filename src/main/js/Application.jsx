@@ -4,6 +4,7 @@ import { bindActionCreators  } from 'redux'
 import { connect } from 'react-redux'
 import { Logo, LogoActionCreator }  from 'component/logo/Logo.jsx';
 import UUID from 'utils/UUID';
+import {ThemeChanger} from "component/theme/ThemeChanger.jsx";
 
 const env = IS_DEV ? "DEV" : "PROD";
 const hash = "" + __webpack_hash__;
@@ -32,6 +33,7 @@ class Application extends React.Component {
         <div><strong>JenkinsMonitoring HTTP response: </strong></div>
         <div>{JSON.stringify(this.props.jenkinsMonitoring)}</div>
         <Logo onLogoClicked={this.props.actions.onLogoClicked}/>
+        <ThemeChanger/>
       </div>
     );
   };
