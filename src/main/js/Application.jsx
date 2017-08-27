@@ -4,7 +4,6 @@ import { bindActionCreators  } from 'redux'
 import { connect } from 'react-redux'
 import { Logo, LogoActionCreator }  from 'component/logo/Logo.jsx';
 import UUID from 'utils/UUID';
-import Style from 'index.scss';
 
 const env = IS_DEV ? "DEV" : "PROD";
 const hash = "" + __webpack_hash__;

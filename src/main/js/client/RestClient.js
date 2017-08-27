@@ -1,4 +1,6 @@
 
+import RestException from 'client/RestException';
+
 let defaultHeaders = new Headers();
 defaultHeaders.append('Accept', 'application/json');
 defaultHeaders.append('Content-Type', 'application/json');
@@ -14,7 +16,7 @@ let jsonFetch = (path, options, callback, errorCallback) => {
   .then(response => {
     console.log("[RESPONSE", response.status + "]", options.verb, path);
     if (!response.ok) {
-      throw new Error(response.statusText);
+      throw new RestException(response);
     }
     return response;
   })

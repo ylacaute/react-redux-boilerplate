@@ -25,7 +25,9 @@ let commonConfig = {
     app: [
       './js/main.jsx'
     ],
-    vendor: ["react", "react-dom"]
+    vendor: ["react", "react-dom"],
+    theme1: "./sass/theme1.scss",
+    theme2: "./sass/theme2.scss"
   },
 
   // Directories where to search to resolve imports
@@ -50,7 +52,7 @@ let commonConfig = {
 
     // Extract css in a file
     new ExtractTextPlugin({
-      filename: "css/style.css",
+      filename: "css/[name].css",
       allChunks: true
     }),
 
@@ -72,7 +74,8 @@ let commonConfig = {
       title: 'RR-Boilerplate',
       filename: 'index.html',
       template: TEMPLATE_DIR + '/index.ejs',
-      inject: 'body'
+      inject: 'body',
+      excludeChunks: [ "theme1", "theme2" ]
     })
   ],
   module: {
